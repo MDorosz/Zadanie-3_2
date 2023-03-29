@@ -10,18 +10,26 @@ public class Main {
         
         System.out.print("Wybierz opcję konwersji (1 - małe litery na duże, 2 - duże litery na małe): ");
         int opcja = scanner.nextInt();
-        
+
+        int lbzmian=0;
         String konwersja = "";
-        for (int i = 0; i < tekst.length(); i++) {
+        
+      for (int i = 0; i < tekst.length(); i++) {
             char c = tekst.charAt(i);
+          
             if (opcja == 1 && Character.isLowerCase(c)) {
-                c = Character.toUpperCase(c);
-            } else if (opcja == 2 && Character.isUpperCase(c)) {
+                c = Character.toUpperCase(c); 
+                lbzmian++;
+            } 
+            else if (opcja == 2 && Character.isUpperCase(c)) {
                 c = Character.toLowerCase(c);
+                lbzmian++;
             }
+        
             konwersja += c;
         }
-        
+
         System.out.println("Tekst po konwersji: " + konwersja);
+        System.out.println("Liczba zmian: " + lbzmian);
     }
 }
